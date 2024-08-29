@@ -32,13 +32,11 @@ $form-label-bg-color: transparent;
    padding: 0 3px;
    transition: 0.2s;
 
-
-   &span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
+   & > span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
     color: red !important;
     font-weight: 700;
     margin-left: -3px;
    }
-
 
    &.Mui-focused {
     color: $smart-blue;
