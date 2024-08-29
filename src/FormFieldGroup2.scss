@@ -1,5 +1,6 @@
 $smart-blue: #1165ffab;
 $form-label-color: gray;
+$form-asterick-color: red;
 $form-label-bg-color: transparent;
 
 .fms-field-group {
@@ -33,7 +34,7 @@ $form-label-bg-color: transparent;
 
 
    &.span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
-    color: red !important;
+    color: $form-asterick-color !important;
     font-weight: 700;
     margin-left: -3px;
    }
