@@ -40,7 +40,11 @@ $form-label-bg-color: transparent;
     padding: 0 3px;
    }
 
-
+   span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
+    color: red !important;
+    font-weight: 700;
+    margin-left: -3px;
+   }
   }
 
   input[type='date'] {
@@ -87,10 +91,4 @@ $form-label-bg-color: transparent;
 .text-area-counter-wrapper {
  margin-top: -1.5rem;
  text-align: right;
-}
-
-span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
- color: red !important;
- font-weight: 700;
- margin-left: -3px;
 }
