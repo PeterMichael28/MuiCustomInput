@@ -11,3 +11,9 @@ div:has(> p.label) {
   max-width: 300px;
   margin-block: 80px;
 }
+
+span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
+  color: red !important;
+  font-weight: 700;
+  margin-left: -3px;
+ }
