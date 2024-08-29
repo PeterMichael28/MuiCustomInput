@@ -1,0 +1,191 @@
+
+
+$smart-blue: #1165ffab;
+$form-label-color: gray;
+$form-label-bg-color: transparent;
+
+.fms-field-group {
+    width: 100%;
+    position: relative;
+    margin: 1.8rem 0;
+
+    input[type="date"] {
+        // Hide placeholder text when not focused and not valid
+        &:not(:focus):invalid {
+          &::-webkit-datetime-edit-params-year,
+          &::-webkit-datetime-edit-params-month,
+          &::-webkit-datetime-edit-params-day,
+          &::-webkit-datetime-edit-year-field,
+          &::-webkit-datetime-edit-month-field,
+          &::-webkit-datetime-edit-day-field,
+          &::-webkit-datetime-edit {
+            color: transparent;
+          }
+        }
+    
+        // Ensure the placeholder is visible when focused or valid
+        &:focus,
+        &:valid {
+          &::-webkit-datetime-edit-params-year,
+          &::-webkit-datetime-edit-params-month,
+          &::-webkit-datetime-edit-params-day,
+          &::-webkit-datetime-edit-year-field,
+          &::-webkit-datetime-edit-month-field,
+          &::-webkit-datetime-edit-day-field,
+          &::-webkit-datetime-edit {
+            color: initial;
+          }
+        }
+    }
+
+    &.reset-margin {
+        margin: 0;
+    }
+    & > input, & > select, & > textarea, & > .css-b62m3t-container {
+        &:hover {
+            border-color:hsl(0, 0%, 75%);
+        }
+        &:focus {
+            outline: 1px solid $smart-blue;
+            border-color:$smart-blue;
+            box-shadow: 0 0 5px rgba($smart-blue, 0.1);
+
+            & ~ label {
+                color: $smart-blue;  // Change the label color to smart blue when the input is focused
+                top: -.5rem;
+                left: .2rem;
+                padding: 0 3px 0 3px;
+                font-size: small;
+                animation-name: onHoverAnimation;
+            }
+            & ~ label:after {
+                height: 18px;  // Keep the label background height
+                // width: 100%;
+
+            }
+        }
+
+        &:valid {
+            & ~ label {
+
+                top: -.5rem;
+                left: .2rem;
+                padding: 0 3px 0 3px;
+                font-size: small;
+                animation-name: onHoverAnimation;
+            }
+            & ~ label:after {
+                height: 18px;  // Keep the label background height
+                width: 100%;
+
+            }
+        }
+    }
+    & > label {
+        position: absolute;
+        pointer-events: none;
+        top: 1px; // Adjust this value for the initial state
+        left: 7px;
+        padding: 0 10px 0 5px;
+        z-index: 10;
+        color: $form-label-color;
+        transition: 0.2s;
+        animation-duration: 0.2s; 
+        animation-fill-mode: forwards;
+        &:after {
+            content: " ";
+            background-color: $form-label-bg-color;
+            width: 100%;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: height 0.5s;  // Add a transition effect to the label background
+        }
+    }
+    &.fms-select-clicked {
+        & > label {
+            top: -7px; // Adjust this value for the focused/valid state
+            left: 5px;
+            font-size: small;
+            animation-name: onHoverAnimation;
+        }
+        & > label:after {
+            height: 18px;
+
+        }
+    }
+
+    & > input:disabled, & > select:disabled, & > textarea:disabled {
+        border-color: #d4d4d4; // You can adjust this color for the border
+        color: #797979; // Adjust text color
+        pointer-events: none;
+        background: #f0f0f0;
+
+        & ~ label {
+            top: -.5rem; // Adjust these values similarly to :focus
+            left: .2rem;
+            padding: 0 3px 0 3px;
+            font-size: small;
+            color: #616161; // Adjust label text color for disabled state
+            top: -1rem;
+        }
+        & ~ label:after {
+            // background-color: #f0f0f0; // Adjust label background color for disabled state
+        }
+    }
+
+    &.disabled  .css-1yf1wca-control {
+        border-color: #d4d4d4; // You can adjust this color for the border
+        pointer-events: none;
+        background: #f0f0f0;
+
+        .css-olqui2-singleValue {
+            color: #797979; // Adjust text color
+
+        }
+    }
+
+    & > .css-3iigni-container {
+        & ~ label {
+            top: -.5rem; // Adjust these values similarly to :focus
+            left: .2rem;
+            padding: 0 3px 0 3px;
+            font-size: small;
+            color: #616161; // Adjust label text color for disabled state
+            top: -1rem;
+        }
+
+        > .css-1o4xlr7-control {
+            border-color: #d4d4d4; // You can adjust this color for the border
+            color: #797979; // Adjust text color
+            pointer-events: none;
+            background: #f0f0f0;
+        }
+
+    }
+
+    & > input:-webkit-autofill, & > input:-webkit-autofill:hover, & > input:-webkit-autofill:focus { 
+            font-size: 1em !important;
+        } 
+
+ 
+}
+
+@keyframes onHoverAnimation {
+    0% {
+        background-color: $form-label-bg-color;
+    }
+    50% {
+        background-color: $form-label-bg-color;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.text-area-counter-wrapper {
+    margin-top: -1.5rem;
+    text-align: right;
+}

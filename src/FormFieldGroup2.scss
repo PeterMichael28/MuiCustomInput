@@ -1,0 +1,96 @@
+$smart-blue: #1165ffab;
+$form-label-color: gray;
+$form-label-bg-color: transparent;
+
+.fms-field-group {
+ width: 100%;
+ position: relative;
+ margin: 1.8rem 0;
+
+ &.reset-margin {
+  margin: 0;
+ }
+
+ .MuiTextField-root {
+  width: 100%;
+
+  .MuiOutlinedInput-root {
+   &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: hsl(0, 0%, 75%);
+   }
+
+   &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: $smart-blue;
+    box-shadow: 0 0 5px rgba($smart-blue, 0.1);
+   }
+  }
+
+  .MuiInputLabel-root {
+   color: $form-label-color;
+   background-color: $form-label-bg-color;
+   padding: 0 3px;
+   transition: 0.2s;
+
+   &.Mui-focused {
+    color: $smart-blue;
+   }
+
+   &.MuiInputLabel-shrink {
+    background-color: white;
+    padding: 0 3px;
+   }
+
+
+  }
+
+  input[type='date'] {
+   &::-webkit-datetime-edit {
+    color: transparent;
+   }
+
+   &:focus::-webkit-datetime-edit,
+   &:valid::-webkit-datetime-edit {
+    color: initial;
+   }
+  }
+ }
+
+ // Disabled state
+ .Mui-disabled {
+  .MuiOutlinedInput-notchedOutline {
+   border-color: #d4d4d4;
+  }
+
+  .MuiInputBase-input {
+   color: #797979;
+   background: #f0f0f0;
+  }
+
+  .MuiInputLabel-root {
+   color: #616161;
+  }
+ }
+}
+
+// Animation for label background
+@keyframes onHoverAnimation {
+ 0%,
+ 50% {
+  background-color: $form-label-bg-color;
+ }
+ 100% {
+  background-color: transparent;
+ }
+}
+
+// If you still need this for textareas
+.text-area-counter-wrapper {
+ margin-top: -1.5rem;
+ text-align: right;
+}
+
+span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
+ color: red;
+ font-weight: 700;
+ margin-left: -3px;
+}
