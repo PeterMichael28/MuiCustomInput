@@ -33,8 +33,8 @@ $form-label-bg-color: transparent;
    transition: 0.2s;
 
 
-   &.span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
-    color: $form-asterick-color !important;
+   &span.MuiFormLabel-asterisk.MuiInputLabel-asterisk.css-wgai2y-MuiFormLabel-asterisk {
+    color: red !important;
     font-weight: 700;
     margin-left: -3px;
    }
