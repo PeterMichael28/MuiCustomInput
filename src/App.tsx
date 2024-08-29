@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import './FormFieldGroup.scss';
 import InputGroup from './components/InputGroup';
 import { Input, TextField } from '@mui/material';
