@@ -1,45 +1,40 @@
 import { useState } from 'react';
 import './FormFieldGroup.scss';
-import InputGroup from './components/InputGroup';
-import { Input, TextField } from '@mui/material';
 import MUIInputGroup from './components/MUIInputGroup';
 
 function App() {
  const [value, setValue] = useState('');
+ const [value2, setValue2] = useState('');
+ const [value3, setValue3] = useState('');
+ const [value4, setValue4] = useState('');
  return (
   <>
    <div>
-    <p className="label">Custom Input</p>
-    <Input
-     value={value}
-     onChange={(e) => setValue(e.target.value)}
-     id="name"
-     type="name"
-     name="name"
-    />
-   </div>
-
-   <div>
-    <p className="label">Custom Input Group</p>
-    <InputGroup
-     value={value}
-     onChange={(e) => setValue(e.target.value)}
-     forId="name"
-     type="name"
+    <p className="label">Custom MUI input Text type</p>
+    <MUIInputGroup
+     value={value2}
+     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      setValue2(e.target.value)
+     }
+     type="email"
      name="name"
      label="Label"
-     onKeyDown={(e) => console.log(e.nativeEvent.key)}
+     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+      console.log(e.nativeEvent.key)
+     }
+
+     //  required={false}
     />
    </div>
 
    <div>
-    <p className="label">Custom MUI Input Group</p>
+    <p className="label">Custom MUI input Date type</p>
     <MUIInputGroup
      value={value}
      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
       setValue(e.target.value)
      }
-     type="name"
+     type="date"
      name="name"
      label="Label"
      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
@@ -50,13 +45,38 @@ function App() {
    </div>
 
    <div>
-    <p className="label">MUI Regular Textfield</p>
-    <TextField
-     id="outlined-basic"
+    <p className="label">Custom MUI input text type but disabled</p>
+    <MUIInputGroup
+     value={value3}
+     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      setValue3(e.target.value)
+     }
+     type="text"
+     name="name"
      label="Label"
-     variant="outlined"
-     value={value}
-     onChange={(e) => setValue(e.target.value)}
+     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+      console.log(e.nativeEvent.key)
+     }
+     disabled={true}
+     //  required={false}
+    />
+   </div>
+   <div>
+    <p className="label">
+     Custom MUI input text type but not required
+    </p>
+    <MUIInputGroup
+     value={value4}
+     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      setValue4(e.target.value)
+     }
+     type="text"
+     name="name"
+     label="Label"
+     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+      console.log(e.nativeEvent.key)
+     }
+     required={false}
     />
    </div>
   </>
