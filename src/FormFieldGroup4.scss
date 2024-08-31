@@ -1,0 +1,106 @@
+$smart-blue: #1165ffab;
+$form-label-color: gray;
+$form-asterick-color: red;
+$form-label-bg-color: transparent;
+
+.withIcon {
+ .fms-field-group {
+  width: 100%;
+  position: relative;
+  margin: 1.8rem 0;
+
+  &.reset-margin {
+   margin: 0;
+  }
+
+  .MuiTextField-root {
+   width: 100%;
+
+   .MuiOutlinedInput-root {
+    &:hover .MuiOutlinedInput-notchedOutline {
+     border-color: hsl(0, 0%, 75%);
+    }
+
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+     border-color: $smart-blue;
+     box-shadow: 0 0 5px rgba($smart-blue, 0.1);
+    }
+   }
+
+   .MuiInputLabel-root {
+    color: $form-label-color;
+    background-color: $form-label-bg-color;
+    padding: 0 3px;
+    transition: 0.2s;
+
+    & > span.MuiInputLabel-asterisk {
+     color: red !important;
+     font-weight: 700;
+     margin-left: -3px;
+    }
+
+    &.Mui-focused {
+     color: $smart-blue;
+    }
+
+    &.MuiInputLabel-shrink {
+     background-color: white;
+     padding: 0 3px;
+    }
+   }
+
+   // Hide default date picker icon
+   input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+   }
+
+   // Style for custom calendar icon
+   .custom-calendar-icon {
+    color: $smart-blue;
+    font-size: 16px;
+    cursor: pointer;
+   }
+  }
+
+  // Styles for date input
+  &.date-input {
+   .MuiOutlinedInput-root {
+    padding-right: 14px;
+   }
+
+   input {
+    cursor: pointer;
+   }
+
+   // Hide placeholder text on mobile
+   @media (max-width: 768px) {
+    input::placeholder {
+     color: transparent;
+    }
+   }
+  }
+
+  // Disabled state
+  .Mui-disabled {
+   .MuiOutlinedInput-notchedOutline {
+    border-color: #d4d4d4;
+   }
+
+   .MuiInputBase-input {
+    color: #797979;
+    background: #f0f0f0;
+   }
+
+   .MuiInputLabel-root {
+    color: #616161;
+   }
+  }
+ }
+
+ // Additional styles to hide the default date picker icon
+ input[type='date']::-webkit-inner-spin-button,
+ input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+ }
+}

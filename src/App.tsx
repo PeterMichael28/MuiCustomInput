@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './FormFieldGroup.scss';
 import MUIInputGroup from './components/MUIInputGroup';
+import MUIInputGroupWithIcon from './components/MUIInputGroup2/MUIInputGroupWithIcon';
 
 function App() {
  const [value, setValue] = useState('');
@@ -35,6 +36,22 @@ function App() {
       setValue(e.target.value)
      }
      type="date"
+     name="name"
+     label="Label"
+     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+      console.log(e.nativeEvent.key)
+     }
+     //  required={false}
+    />
+   </div>
+   <div className="withIcon">
+    <p className="label">Custom MUI input Date type WIth ICon</p>
+    <MUIInputGroupWithIcon
+     value={value}
+     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      setValue(e.target.value)
+     }
+     type="email"
      name="name"
      label="Label"
      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
