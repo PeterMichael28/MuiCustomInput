@@ -51,7 +51,7 @@ function App() {
      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
       setValue(e.target.value)
      }
-     type="email"
+     type="date"
      name="name"
      label="Label"
      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
